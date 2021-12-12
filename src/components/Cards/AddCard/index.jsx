@@ -1,9 +1,18 @@
 import { useState } from "react";
 import "./AddCard.css";
 
-export default function AddCard() {
+export default function AddCard({ addProductArr, setAddProductArr }) {
     const [name, setName] = useState("");
     const [price, setPrice] = useState("");
+
+    const handleAddProduct = (e) => {
+        e.preventDefault();
+        const addProdArrClone = [...addProductArr];
+        addProdArrClone.push({ name, price });
+        setAddProductArr(addProdArrClone);
+        setName("");
+        setPrice("");
+    };
 
     return (
         <div className="card-container">
@@ -30,7 +39,7 @@ export default function AddCard() {
                     <input
                         className="submit-button"
                         type="button"
-                        onChange={(e) => e.preventDefault()}
+                        onClick={(e) => handleAddProduct(e)}
                         value="Add Product"
                     />
                     <input

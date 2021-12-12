@@ -4,10 +4,13 @@ import GetAllCard from "./GetAllCard";
 
 import "./Cards.css";
 
-export default function Card() {
+export default function Card({ addProductArr, setAddProductArr }) {
     return (
         <main className="cards-container">
-            <AddCard />
+            <AddCard
+                addProductArr={addProductArr}
+                setAddProductArr={setAddProductArr}
+            />
             <DeleteCard />
             <GetAllCard />
         </main>
