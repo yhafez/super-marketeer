@@ -1,6 +1,10 @@
 .cards-container {
     display: flex;
-    justify-content: space-around;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    max-width: 100%;
+    width: 100rem;
 }
 
 .card-container {
@@ -11,7 +15,28 @@
     background-color: lightgrey;
     padding: 1rem;
     margin: 1rem;
-    width: 100%;
+    /* max-width: 25%; */
+    width: 25rem;
     height: auto;
     border-radius: 25px;
+}
+
+.card-title {
+    color: black;
+}
+
+.card-input-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.submit-button {
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid darkgrey;
+    border-radius: 5px;
+    text-align: center;
+    width: 6rem;
 }

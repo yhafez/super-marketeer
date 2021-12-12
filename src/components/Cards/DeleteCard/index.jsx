@@ -14,7 +14,7 @@ export default function DeleteCard() {
                 ></textarea>
                 <input
                     className="submit-button"
-                    type="submit"
+                    type="buton"
                     onChange={(e) => e.preventDefault()}
                     value="Delete"
                 />
