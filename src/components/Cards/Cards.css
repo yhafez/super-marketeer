@@ -1,0 +1,17 @@
+.cards-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: lightgrey;
+    padding: 1rem;
+    margin: 1rem;
+    width: 100%;
+    height: auto;
+    border-radius: 25px;
+}
