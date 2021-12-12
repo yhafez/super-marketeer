@@ -10,14 +10,14 @@ export default function AddCard() {
             <h3 className="card-title">Add New Products</h3>
             <form className="card-input-area">
                 <input
-                    className="add-input"
+                    className="input"
                     type="text"
                     placeholder="Name"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                 />
                 <input
-                    className="add-input"
+                    className="input"
                     type="number"
                     min="0.00"
                     max="9999.99"
