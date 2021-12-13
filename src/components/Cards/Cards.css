@@ -49,6 +49,7 @@
     border-radius: 5px;
     text-align: center;
     width: 6rem;
+    height: 2rem;
 }
 
 .submit-button:hover {

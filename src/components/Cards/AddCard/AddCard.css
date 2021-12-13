@@ -1,0 +1,20 @@
+.new-product {
+    color: black;
+    margin-top: 0.3rem;
+}
+
+.products-to-add-container {
+    width: 100%;
+}
+
+.add-results-title {
+    margin-top: 1rem;
+    margin-bottom: 0.3rem;
+    color: black;
+}
+
+.add-result-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}

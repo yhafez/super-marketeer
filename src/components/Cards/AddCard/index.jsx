@@ -1,15 +1,35 @@
 import { useState } from "react";
 import "./AddCard.css";
 
-export default function AddCard({ addProductArr, setAddProductArr }) {
+export default function AddCard() {
     const [name, setName] = useState("");
     const [price, setPrice] = useState("");
+    const [productsToAddArr, setProductsToAddArr] = useState([]);
+    const [productsToAddCompArr, setProductsToAddCompArr] = useState([]);
 
     const handleAddProduct = (e) => {
+        // Prevent page from refreshing on button click
         e.preventDefault();
-        const addProdArrClone = [...addProductArr];
-        addProdArrClone.push({ name, price });
-        setAddProductArr(addProdArrClone);
+
+        // Return early if field is missing
+        if (name === "") return alert("A name is required");
+        if (price === "") return alert("A price is required");
+
+        // Add new products to memory array
+        setProductsToAddArr([...productsToAddArr, { name, price }]);
+
+        // Add new product to components array
+        setProductsToAddCompArr([
+            ...productsToAddCompArr,
+            <div className="add-result-container" key="1">
+                <p className="new-product">
+                    {name.toLowerCase()} - ${price}
+                </p>
+                <button className="submit-button">Save</button>
+            </div>,
+        ]);
+
+        // Reset input fields
         setName("");
         setPrice("");
     };
@@ -35,13 +55,19 @@ export default function AddCard({ addProductArr, setAddProductArr }) {
                     value={price}
                     onChange={(e) => setPrice(e.target.value)}
                 />
-                <div className="add-submit-button">
-                    <input
-                        className="submit-button"
-                        type="button"
-                        onClick={(e) => handleAddProduct(e)}
-                        value="Add Product"
-                    />
+
+                <input
+                    className="submit-button"
+                    type="submit"
+                    onClick={(e) => handleAddProduct(e)}
+                    value="Add Product"
+                />
+
+                <div className="products-to-add-container">
+                    <h4 className="add-results-title">Products to add: </h4>
+                    {productsToAddCompArr.length > 0
+                        ? productsToAddCompArr
+                        : null}
                     <input
                         className="submit-button"
                         type="button"
